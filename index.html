@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecondStitch - Rescued Apparel</title>
+
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-pink': '#ffadd1',
+                        'brand-green': '#ccffda',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-gray-800 font-sans flex flex-col min-h-screen">
+
+
+    <header class="bg-brand-pink text-gray-900 sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="text-center md:text-left mb-4 md:mb-0">
+                <h1 class="text-3xl font-bold tracking-tight"><a href="#">SecondStitch</a></h1>
+                <p class="text-sm font-medium opacity-80 mt-1">Finding a home for rescued apparel.</p>
+            </div>
+            
+            <nav class="flex items-center space-x-6 text-lg font-semibold">
+
+                <div class="relative group">
+                    <button class="hover:text-white transition py-2 flex items-center gap-1 focus:outline-none">
+                        Shop by Category
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <!-- Dropdown Menu -->
+                    <div class="absolute left-0 mt-0 w-48 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <ul class="py-2 text-gray-700 text-base font-normal">
+                            <li><a href="#" class="block px-4 py-2 hover:bg-brand-pink hover:text-gray-900">Tops</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-brand-pink hover:text-gray-900">Bottoms</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-brand-pink hover:text-gray-900">Dresses</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-brand-pink hover:text-gray-900">Footwear</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-brand-pink hover:text-gray-900">Bags</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-brand-pink hover:text-gray-900">Jewellery</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="#" class="hover:text-white transition">Sale</a>
+                <a href="#donate" class="hover:text-white transition">Donate</a>
+                <a href="#" class="hover:text-white transition">About</a>
+            </nav>
+        </div>
+    </header>
+
+
+    <main class="flex-grow">
+        
+        <section class="container mx-auto px-6 py-12">
+            <h2 class="text-3xl font-bold mb-8 text-center text-gray-900">Our New Stock</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+                <!-- Item 1 -->
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow hover:shadow-lg transition">
+                    <img src="https://i.pinimg.com/736x/0e/5b/c4/0e5bc4fed3bae8804fb6b32cdc1998f6.jpg" alt="New Stock Item" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg">Floral Summer Blouse</h3>
+                        <p class="text-gray-600 mt-1">₹200</p>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow hover:shadow-lg transition">
+                    <img src="https://i.pinimg.com/736x/b4/ea/61/b4ea6183c1ce3df135d75a9a250f510a.jpg" alt="New Stock Item" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg">Milkmaid Dress</h3>
+                        <p class="text-gray-600 mt-1">₹400</p>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow hover:shadow-lg transition">
+                    <img src="https://i.pinimg.com/1200x/5a/e5/e2/5ae5e2a7b8f9547fd00a5eb918549e33.jpg" alt="New Stock Item" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg">Leather Crossbody</h3>
+                        <p class="text-gray-600 mt-1">₹400</p>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow hover:shadow-lg transition">
+                    <img src="https://i.pinimg.com/736x/3c/06/99/3c06994b35bf23a881b0ad14266c0f78.jpg" alt="New Stock Item" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg">Wide Leg Trousers</h3>
+                        <p class="text-gray-600 mt-1">₹500</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Old is Gold -->
+        <section class="bg-gray-50 py-12">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold mb-8 text-center text-gray-900">Old is Gold: Try some oldies.</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+                    <!-- Item 1 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition">
+                        <img src="https://i.pinimg.com/736x/d1/bc/eb/d1bceb53b7d69f5740f22cf1866bd14d.jpg" alt="Vintage Item" class="w-full h-64 object-cover">
+                        <div class="p-4">
+                            <h3 class="font-bold text-lg">90s Denim Jacket</h3>
+                            <p class="text-gray-600 mt-1">₹</p>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition">
+                        <img src="https://i.pinimg.com/736x/33/b9/c8/33b9c8102ce7a3a40a392507bb40ad2f.jpg" alt="Vintage Item" class="w-full h-64 object-cover">
+                        <div class="p-4">
+                            <h3 class="font-bold text-lg">Retro Sneakers</h3>
+                            <p class="text-gray-600 mt-1">₹</p>
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition">
+                        <img src="https://i.pinimg.com/1200x/16/70/15/16701555551fd453de37b861d278e60e.jpg" alt="Vintage Item" class="w-full h-64 object-cover">
+                        <div class="p-4">
+                            <h3 class="font-bold text-lg">Vintage Leather Belt</h3>
+                            <p class="text-gray-600 mt-1">₹</p>
+                        </div>
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition">
+                        <img src="https://i.pinimg.com/736x/05/f3/4d/05f34d7290e8a94b6a12c72e023081be.jpg" alt="Vintage Item" class="w-full h-64 object-cover">
+                        <div class="p-4">
+                            <h3 class="font-bold text-lg">Band Graphic Tee</h3>
+                            <p class="text-gray-600 mt-1">₹</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Donate Form -->
+        <section id="donate" class="container mx-auto px-6 py-16 max-w-3xl">
+            <div class="bg-brand-green bg-opacity-30 p-8 rounded-xl shadow-sm border border-brand-green">
+                <div class="prose max-w-none text-center mb-8">
+                    <h2 class="text-3xl font-bold text-gray-900 m-0">Donate: Rescue Old Apparel</h2>
+                    <p class="text-gray-700 mt-2">Clear out your closet and give your garments a second life.</p>
+                </div>
+
+                <form action="#" method="POST" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                            <input type="text" id="name" name="name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-brand-pink focus:ring-brand-pink p-2 border">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-brand-pink focus:ring-brand-pink p-2 border">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                        <input type="email" id="email" name="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-brand-pink focus:ring-brand-pink p-2 border">
+                    </div>
+
+                    <div>
+                        <label for="address" class="block text-sm font-medium text-gray-700">Address for Pickup</label>
+                        <textarea id="address" name="address" rows="3" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-brand-pink focus:ring-brand-pink p-2 border"></textarea>
+                    </div>
+
+                    <div>
+                        <label for="images" class="block text-sm font-medium text-gray-700">Upload Images of Apparel</label>
+                        <input type="file" id="images" name="images" multiple accept="image/*" class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-brand-pink file:text-gray-900 hover:file:bg-pink-400 border border-gray-300 rounded-md cursor-pointer">
+                        <p class="mt-1 text-xs text-gray-500">You can select multiple photos.</p>
+                    </div>
+
+                    <div class="pt-4 text-center">
+                        <button type="submit" class="bg-brand-pink text-gray-900 font-bold py-3 px-8 rounded-md shadow hover:bg-pink-400 hover:shadow-lg transition-all duration-200">
+                            Submit Donation Request
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-green text-gray-900 border-t border-green-200">
+        <div class="container mx-auto px-6 py-10 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="max-w-md text-center md:text-left">
+                <p class="text-lg font-medium italic">"Help us rescue your old clothes from being abandoned to a landfill. Help us save Earth."</p>
+                <p class="mt-2 font-bold text-xl">SecondStitch</p>
+            </div>
+            
+            <div class="text-center md:text-right space-y-2">
+                <p class="font-semibold text-lg border-b border-gray-400 pb-1 mb-2">Contact Us</p>
+                <p class="flex items-center justify-center md:justify-end gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    <a href="mailto:secondstitch@gmail.com" class="hover:underline">secondstitch@gmail.com</a>
+                </p>
+                <p class="flex items-center justify-center md:justify-end gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                    98XYZ 45XYZ
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
