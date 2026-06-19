@@ -39,12 +39,11 @@
                     <!-- Dropdown Menu -->
                     <div class="absolute left-0 mt-0 w-48 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                         <ul class="py-2 text-gray-700 text-base font-normal">
-                            <li><a href="#" class="block px-4 py-2 hover:bg-brand-pink hover:text-gray-900">Tops</a></li>
-                            <li><a href="#" class="block px-4 py-2 hover:bg-brand-pink hover:text-gray-900">Bottoms</a></li>
-                            <li><a href="#" class="block px-4 py-2 hover:bg-brand-pink hover:text-gray-900">Dresses</a></li>
-                            <li><a href="#" class="block px-4 py-2 hover:bg-brand-pink hover:text-gray-900">Footwear</a></li>
-                            <li><a href="#" class="block px-4 py-2 hover:bg-brand-pink hover:text-gray-900">Bags</a></li>
-                            <li><a href="#" class="block px-4 py-2 hover:bg-brand-pink hover:text-gray-900">Jewellery</a></li>
+                            <li><a href="shop.html?category=all" class="block px-4 py-2 hover:bg-brand-pink hover:text-gray-900">All Products</a></li>
+                            <li><a href="shop.html?category=tops" class="block px-4 py-2 hover:bg-brand-pink hover:text-gray-900">Tops</a></li>
+                            <li><a href="shop.html?category=bottoms" class="block px-4 py-2 hover:bg-brand-pink hover:text-gray-900">Bottoms</a></li>
+                            <li><a href="shop.html?category=dresses" class="block px-4 py-2 hover:bg-brand-pink hover:text-gray-900">Dresses</a></li>
+                            <li><a href="shop.html?category=vintage" class="block px-4 py-2 hover:bg-brand-pink hover:text-gray-900">Vintage</a></li>
                         </ul>
                     </div>
                 </div>
@@ -152,6 +151,11 @@
                     </div>
                 </div>
             </div>
+            <div class="text-center mt-10">
+                <a href="shop.html?category=all" class="inline-block bg-gray-900 text-white font-bold py-3 px-8 rounded-full hover:bg-brand-pink hover:text-gray-900 transition shadow-md">
+                    View All Apparel
+                </a>
+            </div>
         </section>
 
         <!-- Section: Old is Gold -->
@@ -232,7 +236,7 @@
                     <p class="text-gray-700 mt-2">Clear out your closet and give your garments a second life.</p>
                 </div>
 
-                <form action="#" method="POST" class="space-y-6">
+                <form id="donateForm" class="space-y-6">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
@@ -453,6 +457,47 @@
                     getLocationBtn.disabled = false;
                 }
             );
+        });
+    }
+
+    // 8. NEW: Donate Form Client-Side Validation
+    const donateForm = document.getElementById('donateForm');
+    
+    if (donateForm) {
+        donateForm.addEventListener('submit', function(event) {
+            // Stop the page from refreshing immediately
+            event.preventDefault(); 
+            
+            // Check if they are logged in first (using the variable we made earlier)
+            if (typeof isLoggedIn !== 'undefined' && isLoggedIn === false) {
+                const loginPopup = document.getElementById('loginPopup');
+                if (loginPopup) loginPopup.classList.remove('hidden');
+                return;
+            }
+
+            // --- VALIDATION 1: Phone Number ---
+            const phoneInput = document.getElementById('phone').value;
+            // This Regex checks if the input is exactly 10 numbers (0-9)
+            const phoneRegex = /^\d{10}$/; 
+            
+            if (!phoneRegex.test(phoneInput)) {
+                alert('Please enter a valid 10-digit phone number (no spaces or letters).');
+                return; // Stop the function here so it doesn't submit
+            }
+
+            // --- VALIDATION 2: Image Upload ---
+            const imageInput = document.getElementById('images');
+            if (imageInput.files.length === 0) {
+                alert('Please upload at least one image of the apparel you wish to donate.');
+                return; // Stop the function here
+            }
+
+            // --- SUCCESS ---
+            // If the code makes it this far, all validation passed!
+            alert('Success! Your donation request is valid. We will contact you for pickup shortly.');
+            
+            // Clear the form so it's ready for the next person
+            donateForm.reset(); 
         });
     }
 </script>
